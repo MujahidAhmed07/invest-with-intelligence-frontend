@@ -32,7 +32,15 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.forgot-password {
+  display: inline-block;
+  margin-right: 20px;
+  /* You can adjust the margin according to your preference */
 }
