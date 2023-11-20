@@ -83,3 +83,12 @@ html,
 .forgot-password a {
   color: #167bff;
 }
+
+
+.auth-inner-dash {
+  background-color: white;
+}
+
+#admin_login {
+  position: left;
+}
