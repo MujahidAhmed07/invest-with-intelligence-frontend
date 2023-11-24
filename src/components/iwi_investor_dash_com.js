@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import './assets/css/EntrepreneurDashboard.css';
+
 
 class Iwi_investor_dash_com extends Component {
     render() {

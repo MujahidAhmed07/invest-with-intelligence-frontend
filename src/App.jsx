@@ -7,6 +7,8 @@ import Login from './components/iwi_login_comp'
 import SignUp from './components/iwi_signup_comp'
 
 import Iwi_investor_dash_com from './components/iwi_investor_dash_com'
+import Iwi_entrepreur_dash_comp from './components/iwi_entrepreur_dash_comp'
+
 import Iwi_adminlogin_comp from './components/iwi_adminlogin_comp'
 import Iwi_admin_dash_comp from './components/iwi_admin_dash_comp'
 
@@ -51,6 +53,7 @@ function App() {
               <Route path="/admin-login" element={<Iwi_adminlogin_comp />} />
               <Route path="/iwi-admin-dash-comp" element={<Iwi_admin_dash_comp />} />
               <Route path="/iwi-investor-dash-com" element={<Iwi_investor_dash_com />} />
+              <Route path="/iwi-entrepreur-dash-comp" element={<Iwi_entrepreur_dash_comp />} />
             </Routes>
 
           </div>

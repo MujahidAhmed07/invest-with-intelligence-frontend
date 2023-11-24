@@ -1,5 +1,5 @@
 import React from 'react';
-import './assets/css/EntrepreneurDashboard.css'; // Create a CSS file for styling
+import './assets/css/entrepreneurDashboard.css'; 
 
 const EntrepreneurDashboard = () => {
     return (
