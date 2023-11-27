@@ -10,7 +10,7 @@ import Iwi_investor_dash_com from './components/iwi_investor_dash_com'
 import Iwi_entrepreur_dash_comp from './components/iwi_entrepreur_dash_comp'
 
 import Iwi_adminlogin_comp from './components/iwi_adminlogin_comp'
-import Iwi_admin_dash_comp from './components/iwi_admin_dash_comp'
+import Iwi_admin_dash_comp from './scenes/dashboard/iwi_admin_dash_comp'
 
 
 function App() {
