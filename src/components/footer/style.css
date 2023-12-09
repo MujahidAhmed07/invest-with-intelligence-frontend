@@ -1,0 +1,141 @@
+.footer {
+    /* background-image: url(https://cdn.animaapp.com/projects/656616c38adc4ddd302b07a2/releases/6566196d020256cef146acde/img/header.svg); */
+    background-size: 100% 100%;
+    height: 345px;
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: #f1f1f1;
+    margin-top: 3%;
+
+  }
+  
+  .footer .group {
+    height: 243px;
+    left: 199px;
+    position: relative;
+    top: 78px;
+    width: 882px;
+  }
+  
+  .footer .div {
+    height: 243px;
+    left: 310px;
+    position: absolute;
+    top: 0;
+    width: 572px;
+  }
+  
+  .footer .group-2 {
+    height: 165px;
+    left: 463px;
+    position: absolute;
+    top: 0;
+    width: 113px;
+  }
+  
+  .footer .text-wrapper {
+    color: #ffffff;
+    font-family: "Inter", Helvetica;
+    font-size: 15px;
+    font-weight: 700;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 109px;
+  }
+  
+  .footer .what-we-do-teams {
+    color: #ffffff;
+    font-family: "Inter", Helvetica;
+    font-size: 15px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 27px;
+    position: absolute;
+    top: 44px;
+    width: 109px;
+  }
+  
+  .footer .group-wrapper {
+    height: 243px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 130px;
+  }
+  
+  .footer .group-3 {
+    height: 243px;
+    position: relative;
+    width: 134px;
+  }
+  
+  .footer .text-wrapper-2 {
+    color: #ffffff;
+    font-family: "Inter", Helvetica;
+    font-size: 15px;
+    font-weight: 700;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 130px;
+  }
+  
+  .footer .how-to-invest {
+    color: #ffffff;
+    font-family: "Inter", Helvetica;
+    font-size: 15px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 27px;
+    position: absolute;
+    top: 44px;
+    width: 130px;
+  }
+  
+  .footer .div-wrapper {
+    height: 171px;
+    left: 219px;
+    position: absolute;
+    top: 0;
+    width: 155px;
+  }
+  
+  .footer .group-4 {
+    height: 171px;
+  }
+  
+  .footer .group-5 {
+    height: 171px;
+    position: relative;
+    width: 159px;
+  }
+  
+  .footer .investors-how-to-get {
+    color: #ffffff;
+    font-family: "Inter", Helvetica;
+    font-size: 15px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 27px;
+    position: absolute;
+    top: 44px;
+    width: 155px;
+  }
+  
+  .footer .path {
+    height: 28px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 143px;
+  }
+  
