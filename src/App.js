@@ -8,6 +8,8 @@ import Description from './pages/Description/Description';
 import LoginPage from './components/login/logn';
 import Signup from './components/SIgnup/Signup';
 import DataForm from './components/dataform/dataform'; // Corrected import with proper casing
+import AdminLogin from './components/adminLogin/adminlogin';
+
 
 function App() {
   return (
@@ -20,9 +22,10 @@ function App() {
             <Route path="/invest" element={<Invest />} />
             <Route path="/description" element={<Description />} />
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<DataForm />} /> {/* Updated component name */}
+            <Route path="/register" element={<DataForm />} /> 
             <Route path="/Signup" element={<Signup />} />
-            <Route path="/dataform" element={<DataForm />} /> {/* Additional route for dataform */}
+            <Route path="/dataform" element={<DataForm />} /> 
+            <Route path="/admin-login" element={<AdminLogin />} /> 
 
           </Routes>
           <Footer />
