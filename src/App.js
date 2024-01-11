@@ -7,9 +7,10 @@ import Invest from './pages/Home/Invest/Invest';
 import Description from './pages/Description/Description';
 import LoginPage from './components/login/logn';
 import Signup from './components/SIgnup/Signup';
-import DataForm from './components/dataform/dataform'; // Corrected import with proper casing
-import AdminLogin from './components/adminLogin/adminlogin';
-
+import DataForm from './components/dataform/dataform'; 
+import About from './pages/About';
+import AdminLogin from './components/adminLogin';
+// import useHistory from 'react-router-dom'; // Removed parentheses around useHistory
 
 function App() {
   return (
@@ -19,13 +20,15 @@ function App() {
           <Header1 />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/invest" element={<Invest />} />
-            <Route path="/description" element={<Description />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<DataForm />} /> 
-            <Route path="/Signup" element={<Signup />} />
-            <Route path="/dataform" element={<DataForm />} /> 
-            <Route path="/admin-login" element={<AdminLogin />} /> 
+             <Route path="/invest" element={<Invest />} />
+              <Route path="/About" element={<About />} />
+                <Route path="/login" element={<LoginPage />} />
+                  <Route path="/register" element={<DataForm />} /> 
+                    <Route path="/dataform" element={<DataForm />} /> 
+                      <Route path="/Signup" element={<Signup />} />
+                        <Route path="/Description" element={<Description />} />
+                      {/* <Route path="/About" element={<About />} /> */}
+                      <Route path="/admin-login" element={<AdminLogin />} /> 
 
           </Routes>
           <Footer />

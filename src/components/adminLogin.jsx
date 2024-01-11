@@ -1,31 +1,47 @@
-import React, { Component } from 'react';
+import React, { Component ,useState} from 'react';
 import { Container } from 'react-bootstrap';
-import { useNavigate } from "react-router-dom";
 
 
+const AdminLogin = () =>  {
+    const [formData, setFormData] = useState({ email: '', password: '' });
 
-
-function LoginPage() {
-    const navigate = useNavigate();
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const userType = e.target.userType.value;
-    
-        if (userType === 'entreprenuer') {
-            navigate('/register');
-        } else if (userType === 'investor') {
-            navigate('/invest');
-        } 
-        else {
-            alert('Please select a user type');
-    };
-    };
-    return (
-    
-        <Container className='d-flex justify-content-center'>
-            <form onSubmit={handleSubmit} className='w-50 p-3 border m-5'>
-                <h3>Login</h3>
 
+        try {
+            const response = await fetch('http://localhost:8080/api/user/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                // Handle successful login
+                console.log('Login successful');
+            } else {
+                // Handle failed login
+                console.error('Login failed');
+            }
+        } catch (error) {
+            console.error('Error during login:', error);
+        }
+    };
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
+    };
+    
+    return (
+        // <form onSubmit={this.handleSubmit}>
+        <Container className='d-flex justify-content-center'>
+            <form className='w-50 p-3 border m-5'>
+                <h3>Admin Login</h3>
+                <br></br>
                 <div className="mb-3">
                     <label>Email Address</label>
                     <input
@@ -52,33 +68,13 @@ function LoginPage() {
                     {/* {errors.password && <p style={{ color: 'red' }}>{errors.password}</p>} */}
                 </div>
 
-                <div
-                    className="mb-3"
-                //   onChange={(e) => this.setState({ userType: e.target.value })}
-                >
-                    <label>Select User</label>
-                    <select
-                        className="form-control"
-                        aria-label="Default select example"
-                        name="userType"
-                    >
-                        <option disabled selected>
-                            Select a user
-                        </option>
-                        
-                        <option value="entreprenuer">Entreprenuer</option>
-                        <option value="investor">Investor</option>
-                    </select>
-                    {/* {errors.userType && <p style={{ color: 'red' }}>{errors.userType}</p>} */}
-                </div>
-
                 <div className="mb-3">
                     <div className="custom-control custom-checkbox">
                         <input
                             type="checkbox"
                             className="custom-control-input"
                             id="customCheck1"
-                            
+                            required="required"
                         //   onChange={this.handleCheckboxChange}
                         />
                         <label className="custom-control-label" htmlFor="customCheck1">
@@ -89,22 +85,19 @@ function LoginPage() {
 
                 <div className="d-grid">
                     <button type="submit" className="btn btn-dark">
-                    {/* onClick={()=>{history.push ("/DataForm")}} */}
-                        Login 
+                        Submit
                     </button>
                 </div>
-                <div className="d-grid">
-                    <p className="forgot-password text-right">
-                        Not a member? <a href="/Signup">Sign Up here</a>
-                    </p>
-                    <p className="forgot-password text-right">
-                        Forgot <a href="#">password?</a>
-                    </p>
-                </div>
+
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+
             </form>
         </Container>    
     );
 
 }
 
-export default LoginPage;
+export default AdminLogin;

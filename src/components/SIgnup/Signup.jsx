@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import { Container } from 'react-bootstrap';
 
 
+
+
+
 function Signup() {
     return (
         // <form onSubmit={this.handleSubmit}>
         <Container className='d-flex justify-content-center'>
             <form className='w-50 p-3 border m-5'>
-                <h3>Register</h3>
-                <br></br>
+                <h3>Signup</h3>
+
                 <div className="mb-3">
                     <label>Name</label>
                     <input
@@ -45,24 +48,7 @@ function Signup() {
                         name="Contact"
                         />
                         </div>
-                        <div
-                    className="mb-3"
-                //   onChange={(e) => this.setState({ userType: e.target.value })}
-                >
-                    <label>Select User</label>
-                    <select
-                        className="form-control"
-                        aria-label="Default select example"
-                        name="userType"
-                    >
-                        <option disabled selected>
-                            Select a user
-                        </option>
-                        <option value="entreprenuer">Entreprenuer</option>
-                        <option value="investor">Investor</option>
-                    </select>
-                    {/* {errors.userType && <p style={{ color: 'red' }}>{errors.userType}</p>} */}
-                </div>
+
                 <div className="mb-3">
                     <label>Password</label>
                     <input
@@ -80,10 +66,9 @@ function Signup() {
                         Submit
                     </button>
                 </div>
-                <br></br>
                 <div className="d-grid">
                     <p className="forgot-password text-right">
-                        Already a member ?  <a href="/login">Sign in here</a>
+                        Already a member <a href="/login">Sign in here</a>
                     </p>
                   
                 </div>

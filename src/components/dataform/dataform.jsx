@@ -1,32 +1,52 @@
 import React from "react";
-import Container from 'react-bootstrap/Container';  
-function dataform() {
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+
+function DataForm() {
   return (
     <Container className='d-flex justify-content-center'>
-    <form action="/submit-startup" method="POST" className='w-50 p-3 border m-5'>
-      <label htmlFor="startupNam hsie">Startup Name:</label><br />
-      <input type="text" id="startupName" name="startupName" /><br /><br />
+      <Form className='w-75 p-3 border m-5' action="/submit-startup" method="POST">
+        <h3 className="mb-4">Startup Data</h3>
 
-      <label htmlFor="joinedDate">Startup Joined Date:</label><br />
-      <input type="date" id="joinedDate" name="joinedDate" /><br /><br />
+        <Form.Group className="mb-3" controlId="startupName">
+          <Form.Label>Startup Name</Form.Label>
+          <Form.Control type="text" placeholder="Investo" required name="Name" />
+        </Form.Group>
 
-      <label htmlFor="description">Startup Description:</label><br />
-      <textarea id="description" name="description" rows="4" cols="70"></textarea><br /><br />
+        <Form.Group className="mb-3" controlId="joinedDate">
+          <Form.Label>Startup Joined Date:</Form.Label>
+          <Form.Control type="date" name="joinedDate" />
+        </Form.Group>
 
-      <label htmlFor="location">Location:</label><br />
-      <input type="text" id="location" name="location" /><br /><br />
+        <Form.Group className="mb-3" controlId="description">
+          <Form.Label>Startup Description:</Form.Label>
+          <Form.Control as="textarea" rows={4} name="description" />
+        </Form.Group>
 
-      <label htmlFor="valuation">Valuation:</label><br />
-      <input type="number" id="valuation" name="valuation" /><br /><br />
+        <Form.Group className="mb-3" controlId="location">
+          <Form.Label>Location:</Form.Label>
+          <Form.Control type="text" name="location" />
+        </Form.Group>
 
-      <label htmlFor="revenue">Revenue:</label><br />
-      <input type="number" id="revenue" name="revenue" /><br /><br />
+        <Form.Group className="mb-3" controlId="valuation">
+          <Form.Label>Valuation:</Form.Label>
+          <Form.Control type="number" name="valuation" />
+        </Form.Group>
 
-      <input type="submit" value="Submit" />
-    </form>
+        <Form.Group className="mb-3" controlId="revenue">
+          <Form.Label>Revenue:</Form.Label>
+          <Form.Control type="number" name="revenue" />
+        </Form.Group>
+
+        <div className="d-grid">
+          <Button variant="dark" type="submit">
+            Submit
+          </Button>
+        </div>
+      </Form>
     </Container>
   );
 }
 
-export default dataform;
-
+export default DataForm;

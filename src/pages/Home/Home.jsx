@@ -8,6 +8,7 @@ import Row from 'react-bootstrap/Row';
 // import Col from 'react-bootstrap/Col';
 import Startups from "../../components/card";
  import companyLogo from '../../pages/Home/hero.png';
+ import { Link } from 'react-router-dom';
  
 
 function Home() {
@@ -21,7 +22,9 @@ function Home() {
                   <h1>Invest in Growing Startups</h1>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit sed ante in efficitur. Donec hendrerit sed ante in efficitur.</p>
                   <div>
-                     <Button variant="dark">See More About Us</Button>
+                     <Link to="/About">
+                  <Button variant="dark">See More About Us</Button>
+                </Link>
                   </div>
                </div>
             </Col>

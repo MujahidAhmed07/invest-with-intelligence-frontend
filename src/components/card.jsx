@@ -1,5 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import React from 'react';
+import { Link } from 'react-router-dom';
 // import exampleImage from '../../public/assets/hero.png'; 
 // Adjust the path based on your project structure
 
@@ -15,7 +17,12 @@ function Startups() {
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text>
+        <Link to="/Description">
+                  
+                
         <Button variant="primary">See Details</Button>
+
+                </Link>
       </Card.Body>
     </Card>
   );
