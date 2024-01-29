@@ -18,8 +18,8 @@ function Home() {
         <Container>
          <Row className="pl-3" style={{ position: 'relative', height: '80vh' }}>
             <Col xs={12} md={6} className="d-flex align-items-center">
-               <div style={{ color: 'black', zIndex: '1', textAlign: 'left' }}>
-                  <h1>Invest in Growing Startups</h1>
+               <div style={{ color:'black', zIndex: '1', textAlign: 'left' }}>
+               <h1 style={{ color: 'black' }}>Invest in Growing Startups</h1>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit sed ante in efficitur. Donec hendrerit sed ante in efficitur.</p>
                   <div>
                      <Link to="/About">

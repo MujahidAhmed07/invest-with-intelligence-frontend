@@ -1,0 +1,68 @@
+/* About.css */
+
+.about-container {
+    background-color: #f0f0f0;
+    padding: 30px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #333;
+  }
+  
+  .highlight {
+    color: #000000;
+  }
+  
+  .tagline {
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+  
+  .intro-section,
+  .vision-section,
+  .features-section,
+  .how-it-works-section,
+  .join-us-section {
+    margin-bottom: 30px;
+  }
+  
+  h2 {
+    color: #000000;
+  }
+  
+  .feature-list,
+  .how-it-works-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .feature-list li,
+  .how-it-works-list li {
+    margin-bottom: 10px;
+  }
+  
+  .footer {
+    margin-top: 20px;
+  }
+  
+  .team-members {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+  }
+  
+  .team-member {
+    text-align: center;
+  }
+  
+  .team-member-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  

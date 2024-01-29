@@ -38,6 +38,7 @@ export const Footer = ({ className }) => {
                 <br />
                 Security
               </p>
+             
             </div>
           </div>
           <div className="div-wrapper">
@@ -60,6 +61,8 @@ export const Footer = ({ className }) => {
        
         <h4>Invest with <br/>Intelligence</h4>
       </div>
+      <p>&copy; 2024 Invest With Intelligence. All rights reserved.</p>
     </div>
+    
   );
 };

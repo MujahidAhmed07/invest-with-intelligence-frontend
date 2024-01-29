@@ -1,0 +1,40 @@
+import 'bootstrapdistcssbootstrap.min.css';
+import Header1 from .componentsheader;
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from .pagesHomeHome;
+import { Footer } from .componentsfooter;
+import Invest from '.pagesHomeInvestInvest';
+import Description from '.pagesDescriptionDescription';
+import LoginPage from '.componentsloginlogn';
+import Signup from '.componentsSIgnupSignup';
+import DataForm from '.componentsdataformdataform'; 
+import About from '.pagesAbout';
+import AdminLogin from '.componentsadminLogin';
+import AdminRoutes from '.path-to-adminroutes';   Import adminroutes component
+
+function App() {
+  return (
+    
+      Router
+        div
+          Header1 
+          Routes
+            Route path= element={Home } 
+            Route path=invest element={Invest } 
+            Route path=About element={About } 
+            Route path=login element={LoginPage } 
+            Route path=register element={DataForm }  
+            Route path=dataform element={DataForm }  
+            Route path=Signup element={Signup } 
+            Route path=Description element={Description } 
+            Route path=admin-login element={AdminLogin } 
+            Route path=admin element={AdminRoutes }  { Render admin dashboard }
+          Routes
+          Footer 
+        div
+      Router
+    
+  );
+}
+
+export default App;
