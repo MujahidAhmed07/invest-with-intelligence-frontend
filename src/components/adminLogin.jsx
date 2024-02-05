@@ -1,46 +1,26 @@
-import React, { Component ,useState} from 'react';
+import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
-
-const AdminLogin = () =>  {
-    const [formData, setFormData] = useState({ email: '', password: '' });
+function AdminLogin() {
+    const navigate = useNavigate(); // Get the navigate function
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:8080/api/user/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-
-            if (response.ok) {
-                // Handle successful login
-                console.log('Login successful');
-            } else {
-                // Handle failed login
-                console.error('Login failed');
-            }
+            // Your form submission logic
+            // For now, just redirect to AdminDashboard
+            navigate('/admin-dashboard');
         } catch (error) {
             console.error('Error during login:', error);
         }
     };
 
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value,
-        });
-    };
-    
     return (
-        // <form onSubmit={this.handleSubmit}>
         <Container className='d-flex justify-content-center'>
-            <form className='w-50 p-3 border m-5'>
-                <h3>Admin Login</h3>
+            <form onSubmit={handleSubmit} className='w-50 p-3 border m-5'>
+                <h1>Admin Login</h1>
                 <br></br>
                 <div className="mb-3">
                     <label>Email Address</label>
@@ -48,11 +28,9 @@ const AdminLogin = () =>  {
                         type="email"
                         className="form-control"
                         placeholder="enter email"
-                        required="required" 
+                        required="required"
                         name="email"
-                    //  onChange={this.handleChange}
                     />
-                    {/* {errors.email && <p style={{ color: 'red' }}>{errors.email}</p>} */}
                 </div>
 
                 <div className="mb-3">
@@ -63,9 +41,7 @@ const AdminLogin = () =>  {
                         required="required"
                         placeholder="enter password"
                         name="password"
-                    // onChange={this.handleChange}
                     />
-                    {/* {errors.password && <p style={{ color: 'red' }}>{errors.password}</p>} */}
                 </div>
 
                 <div className="mb-3">
@@ -75,7 +51,6 @@ const AdminLogin = () =>  {
                             className="custom-control-input"
                             id="customCheck1"
                             required="required"
-                        //   onChange={this.handleCheckboxChange}
                         />
                         <label className="custom-control-label" htmlFor="customCheck1">
                             Remember me
@@ -88,16 +63,9 @@ const AdminLogin = () =>  {
                         Submit
                     </button>
                 </div>
-
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-
             </form>
-        </Container>    
+        </Container>
     );
-
 }
 
 export default AdminLogin;

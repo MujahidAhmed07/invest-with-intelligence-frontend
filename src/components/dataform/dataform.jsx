@@ -24,9 +24,19 @@ function DataForm() {
           <Form.Control as="textarea" rows={4} name="description" />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="csvFile">
-          <Form.Label>Choose a CSV file:</Form.Label>
-          <Form.Control type="file" accept=".csv" name="csvFile" required />
+        <Form.Group className="mb-3" controlId="location">
+          <Form.Label>Location:</Form.Label>
+          <Form.Control type="text" name="location" />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="valuation">
+          <Form.Label>Valuation:</Form.Label>
+          <Form.Control type="number" name="valuation" />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="revenue">
+          <Form.Label>Revenue:</Form.Label>
+          <Form.Control type="number" name="revenue" />
         </Form.Group>
 
         <div className="d-grid">
