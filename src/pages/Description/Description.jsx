@@ -1,44 +1,52 @@
 import React from "react";
 import Button from 'react-bootstrap/Button';
-// import 'bootstrap/dist/css/bootstrap.min.css':
+import { Link } from 'react-router-dom';
 import './Description.css'; 
-import{ Link } from 'react-router-dom';
 
 function Description() {
   return (
     <div className="description-container">
       <h2>About Startup</h2>
-      <div className="details">
-        <h3>Details</h3>
+      <div className="description-content">
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit officiis ex,
-          voluptatum adipisci et facilis dolorem, impedit harum quibusdam repellendus placeat
-          aliquam iure dolores, illum alias ratione ullam quasi? Beatae! Lorem ipsum, dolor sit amet
-          consectetur adipisicing elit. Earum, voluptas! Commodi, eos quasi adipisci, magnam tempora
-          natus sunt harum nam et magni corrupti neque. Similique quibusdam obcaecati eaque dicta officia.
+          This startup, named TechHub, is dedicated to developing cutting-edge technologies that address real-world challenges. Our team of experts combines innovation with practicality to create solutions that improve lives and enhance experiences.
+        </p>
+        <p>
+          At TechHub, we believe in the power of technology to transform industries and drive positive change. Whether it's developing AI-powered applications or designing sustainable solutions, we are committed to pushing the boundaries of what's possible.
+        </p>
+        <p>
+          With a focus on user-centric design and continuous improvement, we strive to deliver products and services that exceed expectations. Our dedication to excellence and passion for innovation sets us apart in the ever-evolving tech landscape.
         </p>
       </div>
 
+      {/* <div className="info-graphics">
+        <div className="info-graphic-item">
+          <img src="/images/innovation.png" alt="Innovation" />
+          <p>Innovation</p>
+        </div>
+        <div className="info-graphic-item">
+          <img src="/images/collaboration.png" alt="Collaboration" />
+          <p>Collaboration</p>
+        </div>
+        <div className="info-graphic-item">
+          <img src="/images/impact.png" alt="Impact" />
+          <p>Impact</p>
+        </div>
+      </div> */}
+
       <div className="button-container">
-      <Link to="/Predict">
-                  <Button variant="dark" size="sm">
-          Predict Analytics
-        </Button>
-                </Link>
+        <Link to="/Predict">
+          <Button variant="dark" size="sm">
+            Predict Analytics
+          </Button>
+        </Link>
         
         <Button variant="secondary" size="sm">
           Got Questions?
         </Button>
       </div>
     </div>
-
-
-
-
   );
-
- }
-
-
+}
 
 export default Description;

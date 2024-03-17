@@ -1,0 +1,18 @@
+/* Adjust input width */
+.iwi-signup-input {
+    width: 100% !important;
+}
+
+/* Adjust width for the container of flex-row align-items-center */
+.d-flex.flex-row.align-items-center.mb-4 {
+    width: auto; /* Change width to auto to allow content to expand */
+}
+
+/* Update styles for the divider */
+.divider.d-flex.align-items-center.my-4 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,31 +1,22 @@
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+
 import React from 'react';
-import { Link } from 'react-router-dom';
-// import exampleImage from '../../public/assets/hero.png'; 
-// Adjust the path based on your project structure
+import { Card } from 'react-bootstrap'; // Assuming you're using react-bootstrap for Card component
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
-
-
-function Startups() {
+function Card1({ imageUrl, title, description, link }) {
   return (
     <Card className='card'>
-      <Card.Img variant="top" src="logo512.png" style={{    height: '180px', objectFit: 'contain'}}/>
+      <Card.Img variant="top" src={imageUrl} style={{ height: '180px', objectFit: 'contain' }} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title>{title}</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          {description}
         </Card.Text>
-        <Link to="/Description">
-                  
-                
-        <Button variant="primary">See Details</Button>
-
-                </Link>
+        {/* Use Link component to navigate */}
+        {link && <Link to={link.url} className="btn btn-primary">{link.label}</Link>}
       </Card.Body>
     </Card>
   );
 }
 
-export default Startups;
+export default Card1;

@@ -19,7 +19,7 @@ function Header1() {
             <Nav.Link as={Link} to="/" style={navLinkStyle}>Home</Nav.Link>
             <Nav.Link as={Link} to="/invest" style={navLinkStyle}>Invest</Nav.Link>
             <Nav.Link as={Link} to="/About" style={navLinkStyle}>About</Nav.Link>
-            <Nav.Link as={Link} to="/Signup" style={navLinkStyle}>Signup</Nav.Link>
+            <Nav.Link as={Link} to="/login" style={navLinkStyle}>Login</Nav.Link>
             <Nav.Link as={Link} to="/dataform" style={{ ...navLinkStyle, backgroundColor: 'grey', borderRadius:17, }}>
               Register your startup 
             </Nav.Link>
@@ -32,5 +32,7 @@ function Header1() {
     </>
   );
 }
+
+
 
 export default Header1;

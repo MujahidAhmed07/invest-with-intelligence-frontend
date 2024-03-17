@@ -54,14 +54,27 @@ const About = () => (
         <strong>Empower your decisions with <span className="highlight">Invest with Intelligence</span> - Where Insights Drive Success!</strong>
       </p>
 
-      <div className="team-members">
-        <div className="team-member">
-          <img src={teamlogo} alt="Team Member 1" className="team-member-img" />
-          <h3>ABDUL WAHID</h3>
-          <p>Frontend Developer</p>
-        </div>
-      
-      </div>
+
+     
+      <div className="team-members-container">
+  <h2>Team</h2>
+  <div className="team-member">
+    <img src={teamlogo} alt="Team Member 1" className="team-member-img" />
+    <h3>ABDUL WAHID</h3>
+    <p>Frontend Developer</p>
+  </div>
+  <div className="team-member">
+    <img src={teamlogo} alt="Team Member 2" className="team-member-img" />
+    <h3>ABDUL WAHID</h3>
+    <p>Frontend Developer</p>
+  </div>
+  <div className="team-member">
+    <img src={teamlogo} alt="Team Member 3" className="team-member-img" />
+    <h3>ABDUL WAHID</h3>
+    <p>Frontend Developer</p>
+  </div>
+</div>
+
     </div>
   </div>
 );
