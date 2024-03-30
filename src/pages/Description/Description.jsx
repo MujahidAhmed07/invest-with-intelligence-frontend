@@ -1,51 +1,156 @@
-import React from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { Card } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
-import './Description.css'; 
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { Container, Row, Col } from 'react-bootstrap';
 
 function Description() {
+  const [data, setData] = useState(""); // Assuming data is a string, adjust as needed
+  const { id } = useParams();
+  const navigate = useNavigate(); // Get the navigate function
+  const e_id = data.evaluation ? data.evaluation.e_id : "";
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`http://localhost:8080/api/iwi/startup/about/${id}`);
+        setData(response.data); // Assuming response.data is a string, adjust as needed
+        console.log(response);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, [id]); // Include id in the dependency array to re-run effect when id changes
+
+  if (!data) {
+    return <div>Loading......</div>
+  }
   return (
-    <div className="description-container">
-      <h2>About Startup</h2>
-      <div className="description-content">
-        <p>
-          This startup, named TechHub, is dedicated to developing cutting-edge technologies that address real-world challenges. Our team of experts combines innovation with practicality to create solutions that improve lives and enhance experiences.
-        </p>
-        <p>
-          At TechHub, we believe in the power of technology to transform industries and drive positive change. Whether it's developing AI-powered applications or designing sustainable solutions, we are committed to pushing the boundaries of what's possible.
-        </p>
-        <p>
-          With a focus on user-centric design and continuous improvement, we strive to deliver products and services that exceed expectations. Our dedication to excellence and passion for innovation sets us apart in the ever-evolving tech landscape.
-        </p>
-      </div>
+    <>
+      <Container>
+        <Card>
+          <Card.Body>
+            <Card.Title>
+              <h2>About Startup</h2>
+            </Card.Title>
+            <br />
 
-      {/* <div className="info-graphics">
-        <div className="info-graphic-item">
-          <img src="/images/innovation.png" alt="Innovation" />
-          <p>Innovation</p>
-        </div>
-        <div className="info-graphic-item">
-          <img src="/images/collaboration.png" alt="Collaboration" />
-          <p>Collaboration</p>
-        </div>
-        <div className="info-graphic-item">
-          <img src="/images/impact.png" alt="Impact" />
-          <p>Impact</p>
-        </div>
-      </div> */}
+            <Card className="mb-6">
+              <Card.Body>
+                <Card.Title className="mb-5">
+                  <h3>Details</h3>
+                </Card.Title>
+                <Row>
+                  <Col>
+                    <h5>Startup Name</h5>
+                    <p>{data.startupName}</p>
 
-      <div className="button-container">
-        <Link to="/Predict">
-          <Button variant="dark" size="sm">
-            Predict Analytics
+                    <h5>Startup Team Size</h5>
+                    <p>{data.teamSize}</p>
+                  </Col>
+                  <Col>
+                    <h5>Startup Location</h5>
+                    <p>{data.startupLocation}</p>
+
+                    <h5>Startup Category</h5>
+                    <p>{data.startupCategory}</p>
+                  </Col>
+
+                  <Col>
+                    <h5>Startup Date Joined</h5>
+                    <p>{data.dateJoined}</p>
+                  </Col>
+
+                </Row>
+              </Card.Body>
+            </Card>
+
+            <Card className="mb-6">
+              <Card.Body>
+                <Card.Title className="mb-3">
+                  <h3>Startup Description</h3>
+                </Card.Title>
+                <Row>
+                  <Col>
+                    <div style={{ whiteSpace: 'pre-line' }}>{data.startupDetails}</div>
+                  </Col>
+
+                </Row>
+              </Card.Body>
+            </Card>
+
+            <Card className="mb-6">
+              <Card.Body>
+                <Card.Title className="mb-5">
+                  <h3>Startup Owner/Entreprenuer Details</h3>
+                </Card.Title>
+                {/* <Row><hr className="mb-4" /></Row> */}
+                <Row className="mb-5">
+                  <Col>
+                    <h5>Owner Name</h5>
+                    <p>{data.entreprenuerMetaData.fname + ' ' + data.entreprenuerMetaData.lname}</p>
+                    <h5>Contact</h5>
+                    <p>{data.entreprenuerMetaData.contact}</p>
+                  </Col>
+                  <Col>
+                    <h5>City</h5>
+                    <p>{data.entreprenuerMetaData.city}</p>
+
+                    <h5>Address</h5>
+                    <p>{data.entreprenuerMetaData.address}</p>
+                  </Col>
+                </Row>
+                {/* <Row><hr className="mb-4" /></Row> */}
+                <Row>
+                  <h5>About Entreprenuer</h5>
+                  <p>{data.entreprenuerMetaData.description}</p>
+                </Row>
+              </Card.Body>
+            </Card>
+
+            <Card>
+              <Card.Body>
+                <Card.Title>
+                  <h3>
+                    Startup Evaluation with Artificial Intelligence
+                  </h3>
+                </Card.Title>
+                <Row>
+                  <p>
+                    In today's dynamic business landscape, identifying promising investment opportunities amidst a sea of startups can be a daunting task for investors. However, with the advent of machine learning and artificial intelligence (AI), predicting startup success has become more accurate and insightful than ever before. Our innovative web application harnesses the power of these cutting-edge technologies to provide investors with invaluable predictions and insights into the future performance of startups.
+                  </p>
+                </Row>
+                <Row className="mt-3">
+                  <Col>
+                    <Link to={`/predict/${e_id}`}>
+                      <Button variant="dark" size="sm">
+                        Predict Analytics
+                      </Button>
+                    </Link>
+                    <Button variant="secondary" size="sm">
+                      Got Questions?
+                    </Button>
+                  </Col>
+                </Row>
+              </Card.Body>
+            </Card>
+          </Card.Body>
+          <br />
+          <br />
+          <Button className='mx-auto d-block mb-5 w-80' variant="dark" onClick={() => navigate(-1)}>
+            Go back
           </Button>
-        </Link>
-        
-        <Button variant="secondary" size="sm">
-          Got Questions?
-        </Button>
-      </div>
-    </div>
+        </Card>
+
+        <br />
+        <br />
+        <br />
+      </Container>
+    </>
   );
 }
 

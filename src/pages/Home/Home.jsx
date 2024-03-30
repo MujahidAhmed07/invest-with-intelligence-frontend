@@ -1,30 +1,43 @@
-import React from "react";
-import { Col, Button, Container, Row } from "react-bootstrap";
-import { Link } from 'react-router-dom';
-import Card from "../../components/Card"; // Import the Card component
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
+import { Col, Card, Button, Container } from "react-bootstrap";
+import Row from 'react-bootstrap/Row';
+import Startups from "../../components/card";
 import companyLogo from '../../pages/Home/hero.png';
-import startupimage from '../../pages/Home/startup.png';
-import Mg from '../../pages/Home/Mg.png';
-import Getty from '../../pages/Home/GettyImages.png';
-import Tech from '../../pages/Home/fintech.png';
-import Eco from '../../pages/Home/download.png';
-import Health from '../../pages/Home/de.png';
-import Food from '../../pages/Home/food.png';
-import Fin from '../../pages/Home/fashion.png';
-import Travel from '../../pages/Home/clean.png';
+import { Link } from 'react-router-dom';
+import Header from '../../components/Header/header';
+import Footer from '../../components/Footer/footers';
 
 function Home() {
+   const [data, setData] = useState([]);
+   console.log(data);
+   useEffect(() => {
+      const fetchData = async () => {
+         try {
+            const response = await axios.get("http://localhost:8080/api/iwi/startup/home/");
+            setData(response.data);
+         } catch (error) {
+            console.error('Error fetching data:', error);
+         }
+      };
+
+      fetchData();
+   }, []);
+
+   if (!data) {
+      return <div>Loading...</div>;
+   }
+
    return (
       <>
-         <Container>
+         <Header />
+         <Container className="mb-10 my-10">
             <Row className="pl-3" style={{ position: 'relative', height: '80vh' }}>
-               <Col xs={12} md={6} className="d-flex align-items-center" >
-                  <div style={{ color: 'black', zIndex: '1', textAlign: 'left', marginLeft:'13%' }}>
-                     <h1 style={{ color: 'black' }}>Invest in Growing Startups</h1>
-                     <br />
-                     <p>          This project is all about making startup investments less of a gamble. Starting a business is thrilling, but it's risky too. Nobody wants to pour money into something without a good idea of what they'll get back. Traditional market research can give you a rough estimate, but the market is so unpredictable that it's hard to be sure about future profits. That's where our solution steps in. We're using machine learning to create a tool that predicts how much profit a startup might make. </p>
+               <Col xs={12} md={6} className="d-flex align-items-center">
+                  <div style={{ color: 'black', zIndex: '1', textAlign: 'left' }}>
+                     <h1>Invest in Growing Startups</h1>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit sed ante in efficitur. Donec hendrerit sed ante in efficitur.</p>
                      <div>
-                        <br />
                         <Link to="/About">
                            <Button variant="dark">See More About Us</Button>
                         </Link>
@@ -36,109 +49,29 @@ function Home() {
                </Col>
             </Row>
          </Container>
-         <br />
-         <br />
-         <br />
-         <br />
-         <br />
-         <br />
-         <br />
-         <br />
-         <br />
-         <br />
-         <br />
-         <br />
-         
-        
+         <br></br>
+         <br></br>
+         <br></br>
+         <br></br>
 
          <Container>
-            <h1 style={{ color: 'black', zIndex: '1', textAlign: 'left', marginLeft:'5%' }}> Popular Startups</h1>
-           <br />
-          
-           <Row className="mb-3 mt-3">
-  <Col md={4} sm={6} xs={12}>
-    <Card
-      imageUrl={Health} 
-      title="TechHub"
-      description="TechHub provides a platform for technology startups to collaborate, innovate, and grow together. Join us to be part of the next big thing in tech!"
-      link={{ url: "/description", label: "View Details" }}
-    />
-  </Col>
-  <Col md={4} sm={6} xs={12}>
-    <Card
-      imageUrl={Getty} 
-      title="EcoGrowth"
-      description="EcoGrowth is dedicated to developing sustainable solutions for environmental challenges. Join us in creating a greener future for generations to come."
-      link={{ url: "/description", label: "View Details" }}
-    />
-  </Col>
-  <Col md={4} sm={6} xs={12}>
-    <Card
-      imageUrl={Mg} 
-      title="Healthify"
-      description="Healthify is revolutionizing healthcare with innovative digital solutions. Join our mission to make healthcare more accessible and efficient for everyone."
-      link={{ url: "/description", label: "View Details" }}
-    />
-  </Col>
-</Row>
-<br />
-<Row className="mb-3 mt-3">
-  <Col md={4} sm={6} xs={12}>
-    <Card
-      imageUrl={Food} 
-      title="FoodTech"
-      description="FoodTech is disrupting the food industry with cutting-edge technology. Join us in creating the future of food delivery and sustainable agriculture."
-      link={{ url: "/description", label: "View Details" }}
-    />
-  </Col>
-  <Col md={4} sm={6} xs={12}>
-    <Card
-      imageUrl={Tech}
-      title="FinTech Solutions"
-      description="FinTech Solutions is reshaping the financial landscape with innovative financial technologies. Join us in revolutionizing banking, payments, and investments."
-      link={{ url: "/description", label: "View Details" }}
-    />
-  </Col>
-  <Col md={4} sm={6} xs={12}>
-    <Card
-      imageUrl={Eco} 
-      title="TravelEase"
-      description="TravelEase is reimagining travel experiences with seamless booking, personalized recommendations, and community-driven insights. Join us on your next adventure!"
-      link={{ url: "/description", label: "View Details" }}
-    />
-  </Col>
-</Row>
-<br />
-<Row className="mb-3 mt-3">
-  <Col md={4} sm={6} xs={12}>
-    <Card
-      imageUrl={startupimage} 
-      title="EdTech Innovations"
-      description="EdTech Innovations is transforming education through interactive learning platforms, personalized content, and data-driven insights. Join us in shaping the future of education."
-      link={{ url: "/description", label: "View Details" }}
-    />
-  </Col>
-  <Col md={4} sm={6} xs={12}>
-    <Card
-      imageUrl={Fin} 
-      title="FashionForward"
-      description="FashionForward is disrupting the fashion industry with sustainable and ethical practices. Join us in creating a more conscious and inclusive fashion world."
-      link={{ url: "/description", label: "View Details" }}
-    />
-  </Col>
-  <Col md={4} sm={6} xs={12}>
-    <Card
-      imageUrl={Travel} 
-      title="CleanEnergy Solutions"
-      description="CleanEnergy Solutions is leading the charge towards a renewable energy future with innovative technologies and scalable solutions. Join us in powering the world sustainably."
-      link={{ url: "/description", label: "View Details" }}
-    />
-  </Col>
-</Row>
-
-   
-           
+            <div className="text-center mb-5">
+               <h1>Popular Startups</h1>
+            </div>
+            <Card>
+               <Card.Body>
+                  <Row className="mb-3 mt-3">
+                     {data.map((startup, index) => (
+                        <Col key={index} xs={12} md={4}>
+                           <Startups startup={startup} />
+                        </Col>
+                     ))}
+                  </Row>
+               </Card.Body>
+            </Card>
          </Container>
+
+         <Footer />
       </>
    );
 }

@@ -1,29 +1,35 @@
-// /*
-// We're constantly improving the code you see. 
-// Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcNg&d=1152665201300829
-// */
+import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 
-// import React from "react";
-// import "./style.css";
+function Header1() {
+  const navLinkStyle = {
+    color: 'white',
 
-// export const Header = ({ className, overlapClassName }) => {
-//   return (
-//     <div className={`header ${className}`}>
-//       <div className={`overlap ${overlapClassName}`}>
-//         <div className="div">
-//           <div className="text-wrapper">Home</div>
-//           <div className="text-wrapper-2">Invest</div>
-//           <div className="text-wrapper-3">List Startup</div>
-//           <div className="text-wrapper-4">About</div>
-//           <div className="text-wrapper-5">Sign in</div>
-//           <div className="overlap-group-wrapper">
-//             <div className="overlap-group">
-//               <div className="text-wrapper-6">Sign up for free</div>
-//             </div>
-//           </div>
-//         </div>
-//         <img className="path" alt="Path" />
-//       </div>
-//     </div>
-//   );
-// };
+  };
+
+  return (
+    <>
+      <Navbar bg="dark" variant="dark" >
+        <Container className='head'>
+          <Navbar.Brand as={Link} to="/">Invest with Intelligence</Navbar.Brand>
+          <Nav className="justify-content-end">
+            <Nav.Link as={Link} to="/" style={navLinkStyle}>Home</Nav.Link>
+            <Nav.Link as={Link} to="/invest" style={navLinkStyle}>Invest</Nav.Link>
+            <Nav.Link as={Link} to="/About" style={navLinkStyle}>About</Nav.Link>
+            <Nav.Link as={Link} to="/signin" style={navLinkStyle}>Sign In</Nav.Link>
+            <Nav.Link as={Link} to="/signup" style={{ ...navLinkStyle, backgroundColor: 'grey', borderRadius: 17, }}>
+              Register
+            </Nav.Link>
+            <Nav.Link as={Link} to="/admin-login" style={navLinkStyle}>{<ManageAccountsIcon />}</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+    </>
+  );
+}
+
+export default Header1;
