@@ -1,22 +1,25 @@
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import React from "react";
+import { Link } from 'react-router-dom';
 
-import React from 'react';
-import { Card } from 'react-bootstrap'; // Assuming you're using react-bootstrap for Card component
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
-function Card1({ imageUrl, title, description, link }) {
+function Startups({ startup }) {
+
   return (
     <Card className='card'>
-      <Card.Img variant="top" src={imageUrl} style={{ height: '180px', objectFit: 'contain' }} />
+      <Card.Img variant="top" src={require('./startup.png')} style={{ height: '180px', objectFit: 'contain' }} />
       <Card.Body>
-        <Card.Title>{title}</Card.Title>
+        <Card.Title>{startup.startupName}</Card.Title>
         <Card.Text>
-          {description}
+          {startup.startupShortDetails}
         </Card.Text>
-        {/* Use Link component to navigate */}
-        {link && <Link to={link.url} className="btn btn-primary">{link.label}</Link>}
+        <Link to={`/Description/${startup.startup_id}`}>
+          <Button variant="primary">See Details</Button>
+        </Link>
       </Card.Body>
     </Card>
   );
 }
 
-export default Card1;
+export default Startups;

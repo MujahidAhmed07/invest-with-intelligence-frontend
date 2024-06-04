@@ -65,3 +65,17 @@ main {
     z-index: 1001;
     cursor: pointer;
 }
+
+
+.sc-aXZVg guZdik {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    border: 2px dashed rgb(6, 88, 194);
+    padding: 8px 16px 8px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-box-flex: 0;
+    flex-grow: 0;
+}

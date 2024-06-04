@@ -1,10 +1,10 @@
 import React from "react";
 import teamlogo from "./myphoto.jpg";
 import "./About.css";
-import Header from '.././components/Header/header.jsx'
-import Footer from '.././components/Footer/footers'
+import Header from '../../components/Header/header';
+import Footer from '../../components/Footer/footers';
 
-const About = () => (
+function About() {
     <>
         <Header />
         <div className="about-container">
@@ -83,6 +83,8 @@ const About = () => (
         </div>
         <Footer />
     </>
-);
 
-export default About;
+
+}
+
+export default About; 
